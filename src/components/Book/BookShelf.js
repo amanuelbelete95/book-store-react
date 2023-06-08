@@ -31,7 +31,7 @@ const bookAr = [
 
 function BookShelf() {
  const books = bookAr.map((book) => 
-  <BookItem key={book.id} categories={book.categories} name={book.name} author={book.author}/>
+  <BookItem key={book.id} categories={book.categories} name={book.name} author={book.author} completedChap={book.completedChap} totalChap={book.totalChap}/>
  );
 
  return (

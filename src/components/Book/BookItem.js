@@ -1,4 +1,5 @@
 function BookItem(props) {
+  
 const {
   categories,
   name,
@@ -28,12 +29,12 @@ return (
 
      <p> {bookProgress}</p>
     </div>
-    
+
 {/* Right section */}
     <div className="right-section">
       <p className="currentHolder">Current Chapter</p>
       <p className="currentChapter">{currentChap}</p>
-      <button>Update Progress</button>
+      <button className="update-btn" type="button">Update Progress</button>
     </div>
 
   </div>
