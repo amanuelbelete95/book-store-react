@@ -31,8 +31,8 @@ function InputBook() {
     type="text" placeholder="book-title" value={title} onChange={handleChangeTitle} className="bookFormInput"/>
 
      <input 
-    type="text" placeholder="book category" value={category} onChange={handleChangeCategory} className="bookFormInput" />
-    <button> Add Book</button>
+    type="text" placeholder="book category" value={category} onChange={handleChangeCategory} className="bookFormCategory" />
+    <button type='button'> Add Book</button>
   </form>
 
   <span className='message'>{message}</span>
