@@ -1,13 +1,13 @@
-import InputBook from "./Book/InputBook"
-import BookShelf from "./Book/BookShelf"
+import InputBook from './Book/InputBook';
+import BookShelf from './Book/BookShelf';
 
 function Book() {
   return (
     <div>
-      <BookShelf/>
-      <InputBook/>
+      <BookShelf />
+      <InputBook />
     </div>
-  )
+  );
 }
 
 export default Book;

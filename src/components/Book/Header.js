@@ -1,12 +1,12 @@
-import Book from "../Book"
-import Category from "../Category"
-import {Link, Route, Routes } from 'react-router-dom'
+import { Link, Route, Routes } from 'react-router-dom';
+import Book from '../Book';
+import Category from '../Category';
 
-function Header(){
+function Header() {
   return (
     <div className="header">
       <>
-      <nav className="my-nav">
+        <nav className="my-nav">
           <h5 className="book-heading">BookStore CMS</h5>
           <ul className="my-list">
             <li><Link to="/">Book</Link></li>
@@ -19,7 +19,7 @@ function Header(){
         </Routes>
       </>
     </div>
-  )
+  );
 }
 
 export default Header;
