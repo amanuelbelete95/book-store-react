@@ -59,9 +59,12 @@ form {
   display: flex;
   justify-content: space-around;
 }
+
 input {
   font-size: larger;
+  border-radius: 12px;
 }
+
 .bookFormInput {
   width: 300px;
 }
