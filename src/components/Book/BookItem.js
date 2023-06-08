@@ -21,6 +21,11 @@ return (
       <span className="bookTitle">{name}</span>
        <span className="bookAuthor">{author}</span>
        <nav className="bookInter">
+        <ul>
+          <li>Comments</li>
+          <li>Remove</li>
+          <li>Edit</li>
+        </ul>
        </nav>
 
     </div>
