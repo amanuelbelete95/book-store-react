@@ -53,10 +53,7 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Add books ]**
-- **[remove books ]**
-- **[edit books ]**
-- **[update book progress and status of reading]**
+- **[Book store setup ]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -101,6 +98,8 @@ Example commands:
 
 ### Install
 
+npm install
+
 <!--
 Example command:
 
@@ -113,6 +112,8 @@ Example command:
 ### Usage
 
 To run the project, execute the following command:
+
+npm start
 
 <!--
 Example command:
@@ -163,7 +164,7 @@ Example:
 
 - **[Add books ]**
 - **[remove books ]**
-- **[edit books ]**
+- **[edit books and styling]**
 - **[update book progress and status of reading]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
