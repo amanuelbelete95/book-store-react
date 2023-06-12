@@ -1,6 +1,6 @@
 import BookItem from './BookItem';
 
-const bookAr = [
+export const bookAr = [
   {
     categories: 'Action',
     name: 'The Hunger games',
