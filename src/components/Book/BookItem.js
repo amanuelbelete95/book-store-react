@@ -1,16 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../../redux/books/booksSlice';
 
 function BookItem(props) {
+  const dispatch = useDispatch();
   const {
     categories,
     name,
     author,
     completedChap,
     totalChap,
+    idElem,
   } = props;
 
-  const bookProgress = `You have read ${(completedChap / totalChap) * 100}%`;
+  const handleRemoveBook = (id) => {
+    dispatch(removeBook(id));
+  };
+
+  const bookProgress = `${Math.round((completedChap / totalChap)) * 100}%`;
 
   const currentChap = `${completedChap < totalChap ? completedChap : totalChap}`;
 
@@ -23,9 +32,22 @@ function BookItem(props) {
         <span className="bookAuthor">{author}</span>
         <nav className="bookInter">
           <ul>
-            <li>Comments</li>
-            <li>Remove</li>
-            <li>Edit</li>
+            <li key={uuidv4()}>
+              <button type="button" onClick={() => handleRemoveBook(idElem)}>
+                Comments
+              </button>
+            </li>
+
+            <li key={uuidv4()}>
+              <button type="button" onClick={() => handleRemoveBook(idElem)}>
+                Remove
+              </button>
+            </li>
+            <li key={uuidv4()}>
+              <button type="button" onClick={() => handleRemoveBook(idElem)}>
+                Edit
+              </button>
+            </li>
           </ul>
         </nav>
 
@@ -54,6 +76,7 @@ BookItem.propTypes = {
   author: PropTypes.string.isRequired,
   completedChap: PropTypes.number.isRequired,
   totalChap: PropTypes.number.isRequired,
+  idElem: PropTypes.number.isRequired,
 };
 
 export default BookItem;

@@ -1,38 +1,10 @@
+import { useSelector } from 'react-redux';
 import BookItem from './BookItem';
-
-export const bookAr = [
-  {
-    categories: 'Action',
-    name: 'The Hunger games',
-    author: 'Suzanne Collins',
-    completedChap: 6,
-    totalChap: 20,
-    id: 1,
-
-  },
-  {
-    categories: 'Economic Book',
-    name: 'Food Security',
-    author: 'Suzanne Collins',
-    completedChap: 6,
-    totalChap: 20,
-    id: 2,
-
-  },
-  {
-    categories: 'Science Fiction',
-    name: 'Dune',
-    author: 'Frank',
-    completedChap: 25,
-    totalChap: 40,
-    id: 3,
-
-  },
-
-];
+import { selectBooks } from '../../redux/books/booksSlice';
 
 function BookShelf() {
-  const books = bookAr.map((book) => (
+  const booksStore = useSelector(selectBooks);
+  const books = booksStore.map((book) => (
     <BookItem
       key={book.id}
       categories={book.categories}

@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../../redux/books/booksSlice';
 
 function InputBook() {
+  const dispatch = useDispatch();
   const [title, setTitle] = useState('');
-  const [category, setCategory] = useState('');
+  const [author, setAuthor] = useState('');
   const [message, setMessage] = useState('');
 
   const handleChangeTitle = (e) => {
     setTitle(e.target.value);
   };
   const handleChangeCategory = (e) => {
-    setCategory(e.target.value);
+    setAuthor(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (title.trim() && category.trim()) {
+    if (title.trim() && author.trim()) {
+      dispatch(addBook({ title, author }));
       setTitle('');
-      setCategory('');
+      setAuthor('');
       setMessage('');
     } else {
       setMessage('please input title and categories');
@@ -36,8 +40,8 @@ function InputBook() {
 
         <input
           type="text"
-          placeholder="book category"
-          value={category}
+          placeholder="book author"
+          value={author}
           onChange={handleChangeCategory}
           className="bookFormCategory"
         />
