@@ -6,7 +6,7 @@ function BookShelf() {
   const booksStore = useSelector(selectBooks);
   const myBooks = booksStore.map((book) => (
     <BookItem
-      key={book.id}
+      key={book.item_id}
       categories={book.categories}
       title={book.title}
       author={book.author}
