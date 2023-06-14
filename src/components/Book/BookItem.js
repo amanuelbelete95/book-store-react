@@ -8,7 +8,7 @@ function BookItem(props) {
   const dispatch = useDispatch();
   const {
     categories,
-    name,
+    title,
     author,
     completedChap,
     totalChap,
@@ -19,7 +19,7 @@ function BookItem(props) {
     dispatch(removeBook(id));
   };
 
-  const bookProgress = `${Math.round((completedChap / totalChap)) * 100}%`;
+  const bookProgress = `${Math.round((completedChap / totalChap) * 100)}%`;
 
   const currentChap = `${completedChap < totalChap ? completedChap : totalChap}`;
 
@@ -28,23 +28,23 @@ function BookItem(props) {
 
       <div className="left-section">
         <span className="bookCat">{categories}</span>
-        <span className="bookTitle">{name}</span>
+        <span className="bookTitle">{title}</span>
         <span className="bookAuthor">{author}</span>
         <nav className="bookInter">
           <ul>
             <li key={uuidv4()}>
-              <button type="button" onClick={() => handleRemoveBook(idElem)}>
+              <button type="button">
                 Comments
               </button>
             </li>
 
             <li key={uuidv4()}>
-              <button type="button" onClick={() => handleRemoveBook(idElem)}>
+              <button type="button" onClick={handleRemoveBook(idElem)}>
                 Remove
               </button>
             </li>
             <li key={uuidv4()}>
-              <button type="button" onClick={() => handleRemoveBook(idElem)}>
+              <button type="button">
                 Edit
               </button>
             </li>
@@ -53,11 +53,8 @@ function BookItem(props) {
 
       </div>
       <div className="middle-section">
-
-        <p>
-          {' '}
-          {bookProgress}
-        </p>
+        <span>{bookProgress}</span>
+        <span>completed</span>
       </div>
 
       <div className="right-section">
@@ -72,7 +69,7 @@ function BookItem(props) {
 
 BookItem.propTypes = {
   categories: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   completedChap: PropTypes.number.isRequired,
   totalChap: PropTypes.number.isRequired,

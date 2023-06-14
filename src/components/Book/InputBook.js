@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../../redux/books/booksSlice';
 
 function InputBook() {
@@ -10,9 +11,11 @@ function InputBook() {
 
   const handleChangeTitle = (e) => {
     setTitle(e.target.value);
+    e.target.value = '';
   };
-  const handleChangeCategory = (e) => {
+  const handleChangeAuthor = (e) => {
     setAuthor(e.target.value);
+    e.target.value = '';
   };
 
   const handleSubmit = (e) => {
@@ -42,10 +45,10 @@ function InputBook() {
           type="text"
           placeholder="book author"
           value={author}
-          onChange={handleChangeCategory}
-          className="bookFormCategory"
+          onChange={handleChangeAuthor}
+          className="bookFormauthor"
         />
-        <button type="button"> Add Book</button>
+        <button type="button" onClick={() => dispatch(addBook({ id: uuidv4(), title, author }))}> Add Book</button>
       </form>
 
       <span className="message">{message}</span>

@@ -4,11 +4,11 @@ import { selectBooks } from '../../redux/books/booksSlice';
 
 function BookShelf() {
   const booksStore = useSelector(selectBooks);
-  const books = booksStore.map((book) => (
+  const myBooks = booksStore.map((book) => (
     <BookItem
       key={book.id}
       categories={book.categories}
-      name={book.name}
+      title={book.title}
       author={book.author}
       completedChap={book.completedChap}
       totalChap={book.totalChap}
@@ -17,7 +17,7 @@ function BookShelf() {
 
   return (
     <>
-      {books}
+      {myBooks}
     </>
   );
 }
