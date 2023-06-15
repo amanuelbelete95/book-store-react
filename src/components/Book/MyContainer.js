@@ -2,7 +2,7 @@ import { Link, Route, Routes } from 'react-router-dom';
 import Book from '../Book';
 import Category from '../Category';
 
-function Header() {
+function MyContainer() {
   return (
     <div className="header">
       <>
@@ -22,4 +22,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default MyContainer;

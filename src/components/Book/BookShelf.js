@@ -1,10 +1,13 @@
+import React from 'react';
 import { useSelector } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
+// import { selectBooks } from '../../redux/books/booksSlice';
 import BookItem from './BookItem';
-import { selectBooks } from '../../redux/books/booksSlice';
 
 function BookShelf() {
-  const booksStore = useSelector(selectBooks);
-  const myBooks = booksStore.map((book) => (
+  const { books: booksStore } = useSelector((store) => store.books);
+  console.log(booksStore);
+  const books = booksStore.map((book) => (
     <BookItem
       key={book.item_id}
       categories={book.categories}
@@ -12,13 +15,14 @@ function BookShelf() {
       author={book.author}
       completedChap={book.completedChap}
       totalChap={book.totalChap}
+      idElem={book.item_id}
     />
   ));
 
   return (
-    <>
-      {myBooks}
-    </>
+    <div>
+      {books}
+    </div>
   );
 }
 

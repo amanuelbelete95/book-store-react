@@ -73,7 +73,7 @@ BookItem.propTypes = {
   author: PropTypes.string.isRequired,
   completedChap: PropTypes.number.isRequired,
   totalChap: PropTypes.number.isRequired,
-  idElem: PropTypes.number.isRequired,
+  idElem: PropTypes.string.isRequired,
 };
 
 export default BookItem;

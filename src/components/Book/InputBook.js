@@ -11,17 +11,16 @@ function InputBook() {
 
   const handleChangeTitle = (e) => {
     setTitle(e.target.value);
-    e.target.value = '';
   };
+
   const handleChangeAuthor = (e) => {
     setAuthor(e.target.value);
-    e.target.value = '';
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (title.trim() && author.trim()) {
-      dispatch(addBook({ title, author }));
+      dispatch(addBook({ id: uuidv4(), title, author }));
       setTitle('');
       setAuthor('');
       setMessage('');
@@ -48,7 +47,7 @@ function InputBook() {
           onChange={handleChangeAuthor}
           className="bookFormauthor"
         />
-        <button type="button" onClick={() => dispatch(addBook({ id: uuidv4(), title, author }))}> Add Book</button>
+        <button type="submit"> Add Book</button>
       </form>
 
       <span className="message">{message}</span>
