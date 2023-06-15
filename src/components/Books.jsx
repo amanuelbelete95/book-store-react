@@ -12,14 +12,14 @@ function Books() {
   const [cat, setCat] = useState('Fiction');
 
   return (
-    <div className='books'>
+    <div className="books">
       <BookList />
-      <form className='form'>
-        <div className='form-line'></div>
-          <h1 className='form-title'>ADD NEW BOOK</h1>
-        <div className='form-body'>
+      <form className="form">
+        <div className="form-line" />
+        <h1 className="form-title">ADD NEW BOOK</h1>
+        <div className="form-body">
           <input
-            className='author'
+            className="author"
             type="text"
             value={author}
             placeholder="author"
@@ -39,7 +39,7 @@ function Books() {
             required
           />
           <select
-            className='select'
+            className="select"
             value={cat}
             onChange={(e) => setCat(e.target.value)}
           >
