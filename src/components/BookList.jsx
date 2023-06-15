@@ -3,7 +3,6 @@ import React from 'react';
 import { deleteBook } from '../redux/slices/books/bookSlice';
 
 function BookList() {
-
   const ulStyle = {
     padding: '0 5em',
     overflow: 'auto',
@@ -65,8 +64,8 @@ function BookList() {
 
   if (isLoading) {
     return (
-      <div className='lds-roller'>
-         <div />
+      <div className="lds-roller">
+        <div />
         <div />
         <div />
         <div />
@@ -80,33 +79,70 @@ function BookList() {
 
   if (errorMsg) {
     return (
-      <div style={{ marginTop: '50px' }}>Failed to fetch</div>
+      <div className="error">Failed to fetch</div>
     );
   }
 
   return (
-    <ul>
+    <ul style={ulStyle}>
       {Object.entries(books).map(([id, book]) => book.map((bookItem) => (
-        <li key={id}>
+        <li
+          key={id}
+          style={liStyle}
+        >
           <div>
-            <p>{bookItem.category}</p>
-            <h2>{bookItem.title}</h2>
-            <p>{bookItem.author}</p>
+            <p style={catStyle}>
+              {bookItem.category}
+            </p>
+            <h2 style={titleStyle}>
+              {bookItem.title}
+            </h2>
+
+            <p style={authorStyle}>
+              {bookItem.author}
+            </p>
             <div>
-              <button type="button">edit</button>
               <button
                 type="button"
+                style={editStyle}
+              >
+                edit
+              </button>
+              <button
+                type="button"
+                style={deleteStyle}
                 onClick={() => {
                   dispatch(deleteBook(id));
                 }}
               >
                 delete
               </button>
-              <button type="button">comment</button>
+              <button
+                type="button"
+                style={commentStyle}
+              >
+                comment
+              </button>
             </div>
           </div>
-          <div>
-            <div />
+          <div className="progress">
+            <div style={div1Style}>
+              <div className="progress-bar">
+                <div className="progresss" />
+              </div>
+              <p style={div1pStyle}>
+                <span style={div1spanStyle}>
+                  64%
+                </span>
+                <br />
+                Completed
+              </p>
+            </div>
+            <div className="infos">
+              <p className="current-chapter">Current chapter</p>
+              <h3 className="chapter">chapter 17</h3>
+              <button type="button" className="update">update progress</button>
+            </div>
           </div>
         </li>
       )))}
