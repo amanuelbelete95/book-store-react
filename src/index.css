@@ -160,10 +160,9 @@ button {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-
-  /* background:
+  background:
     radial-gradient(closest-side, white 79%, transparent 80% 100%),
-    conic-gradient(#379cf6 65%, rgb(226, 226, 226) 0); */
+    conic-gradient(#379cf6 65%, rgb(226, 226, 226) 0);
 }
 
 .progress {
