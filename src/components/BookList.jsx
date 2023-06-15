@@ -65,7 +65,16 @@ function BookList() {
 
   if (isLoading) {
     return (
-      <div style={{ marginTop: '50px' }}>Loading...</div>
+      <div className='lds-roller'>
+         <div />
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+      </div>
     );
   }
 
