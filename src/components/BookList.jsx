@@ -1,6 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
 import React from 'react';
-import PropTypes from 'prop-types';
 import { deleteBook } from '../redux/slices/books/bookSlice';
 
 function BookList({ books }) {
@@ -52,8 +51,8 @@ function BookList({ books }) {
   );
 }
 
-BookList.propTypes = {
-  books: PropTypes.arrayOf().isRequired,
-};
+// BookList.propTypes = {
+//   books: PropTypes.arrayOf().isRequired,
+// };
 
 export default BookList;

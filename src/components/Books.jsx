@@ -1,10 +1,11 @@
+import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useState } from 'react';
 import BookList from './BookList';
-import { addBook } from '../redux/slices/books/bookSlice';
+import { postBook } from '../redux/slices/books/bookSlice';
 
 function Books() {
-  const { books } = useSelector((store) => store.book);
+  const { postMsg } = useSelector((store) => store.book);
   const dispatch = useDispatch();
   const [author, setAuthor] = useState('');
   const [title, setTitle] = useState('');
@@ -12,7 +13,7 @@ function Books() {
 
   return (
     <div>
-      <BookList books={books} />
+      <BookList />
       <div style={{
         width: '100%',
         background: 'black',
@@ -48,23 +49,24 @@ function Books() {
           </select>
           <button
             type="submit"
-            onClick={(e) => {
+            onClick={async (e) => {
               e.preventDefault();
 
               if (author !== '' && title !== '') {
                 const book = {
-                  item_id: `item${books.length + 1}`,
+                  item_id: uuidv4(),
                   title,
                   author,
                   category: cat,
                 };
-                dispatch(addBook(book));
+                dispatch(postBook(book));
                 setAuthor('');
                 setTitle('');
               }
             }}
           >
-            ADD BOOK
+            {postMsg && <div> POSTING BOOK</div>}
+            {!postMsg && <div>ADD BOOK</div>}
           </button>
         </div>
       </form>
