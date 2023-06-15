@@ -163,6 +163,7 @@ Example:
 ## 🔭 Future Features <a name="future-features"></a>
 
 - **[Add books ]**
+- **[Add fetch-api ]**
 - **[remove books ]**
 - **[edit books and styling]**
 - **[update book progress and status of reading]**
