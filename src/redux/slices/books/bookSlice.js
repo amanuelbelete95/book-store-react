@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
 
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/3v8geQIXRo03XxDEJ6ZJ/books/';
 const initialState = {
   books: [
     {
@@ -21,6 +23,10 @@ const initialState = {
       category: 'Nonfiction',
     },
   ],
+  isLoading: true,
+  errorMsg: false,
+  postMsg: false,
+  deleteMsg: false,
 };
 
 const bookSlice = createSlice({
