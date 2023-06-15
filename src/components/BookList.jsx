@@ -1,69 +1,57 @@
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import React from 'react';
-import PropTypes from 'prop-types';
 import { deleteBook } from '../redux/slices/books/bookSlice';
 
-function BookList({ books }) {
+function BookList() {
+  const {
+    books, isLoading, errorMsg,
+  } = useSelector((store) => store.book);
   const dispatch = useDispatch();
+
+  if (isLoading) {
+    return (
+      <div style={{ marginTop: '50px' }}>Loading...</div>
+    );
+  }
+
+  if (errorMsg) {
+    return (
+      <div style={{ marginTop: '50px' }}>Failed to fetch</div>
+    );
+  }
 
   return (
     <ul>
-      {books.map((book) => (
-        <>
-          <li
-            key={book.item_id}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              marginTop: '50px',
-            }}
-          >
+      {Object.entries(books).map(([id, book]) => book.map((bookItem) => (
+        <li key={id}>
+          <div>
+            <p>{bookItem.category}</p>
+            <h2>{bookItem.title}</h2>
+            <p>{bookItem.author}</p>
             <div>
-              <span>{book.category}</span>
-              <h2>{book.title}</h2>
-              <p>{book.author}</p>
-              <div style={{
-                display: 'flex',
-                gap: '10px',
-                marginTop: '25px',
-              }}
+              <button type="button">edit</button>
+              <button
+                type="button"
+                onClick={() => {
+                  dispatch(deleteBook(id));
+                }}
               >
-                <button type="submit">Comments</button>
-                <button onClick={() => dispatch(deleteBook(book.item_id))} type="submit">Remove</button>
-                <button type="submit">Edit</button>
-              </div>
+                delete
+              </button>
+              <button type="button">comment</button>
             </div>
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '10px',
-            }}
-            >
-              <div>
-                <img alt={book.title} />
-                <p>
-                  8%
-                  <br />
-                  Completed
-                </p>
-              </div>
-              <div>
-                <p>Current chapter</p>
-                <p>{book.chapter}</p>
-                <button type="submit">UPDATE PROGRESS</button>
-              </div>
-            </div>
-          </li>
-        </>
-      ))}
+          </div>
+          <div>
+            <div />
+          </div>
+        </li>
+      )))}
     </ul>
   );
 }
 
-BookList.propTypes = {
-  books: PropTypes.arrayOf().isRequired,
-};
+// BookList.propTypes = {
+//   books: PropTypes.arrayOf().isRequired,
+// };
 
 export default BookList;
