@@ -14,7 +14,7 @@ function NavBar() {
   ];
   return (
     <nav>
-      <h1>Bee&apos;s Bookstore</h1>
+      <h1>Aman Bookstore</h1>
       <ul>
         {links.map((link) => (
           <li key={link.name}>

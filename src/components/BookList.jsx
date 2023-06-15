@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import React from 'react';
 import { deleteBook } from '../redux/slices/books/bookSlice';
 
-function BookList({ books }) {
+function BookList() {
   const {
     books, isLoading, errorMsg,
   } = useSelector((store) => store.book);
@@ -19,7 +19,6 @@ function BookList({ books }) {
       <div style={{ marginTop: '50px' }}>Failed to fetch</div>
     );
   }
-
 
   return (
     <ul>
