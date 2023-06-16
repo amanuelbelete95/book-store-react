@@ -8,7 +8,6 @@ function BookList() {
     overflow: 'auto',
     maxHeight: '265px',
   };
-
   const liStyle = {
     background: '#fff',
     padding: '1em',
@@ -17,7 +16,6 @@ function BookList() {
     alignItems: 'center',
     justifyContent: 'space-between',
   };
-
   const catStyle = {
     color: 'gray',
     fontWeight: 'bold',
@@ -61,7 +59,6 @@ function BookList() {
   };
   const div1pStyle = { textAlign: 'center', color: 'gray', marginRight: '5.2em' };
   const div1spanStyle = { fontSize: '2.2em', color: 'black' };
-
   const {
     books, isLoading, errorMsg,
   } = useSelector((store) => store.book);
@@ -154,9 +151,5 @@ function BookList() {
     </ul>
   );
 }
-
-// BookList.propTypes = {
-//   books: PropTypes.arrayOf().isRequired,
-// };
 
 export default BookList;
