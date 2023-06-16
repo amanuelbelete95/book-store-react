@@ -38,17 +38,18 @@ function NavBar() {
   ];
   return (
     <nav style={navStyle}>
-     <h1 style={h1Style}>
+      <h1 style={h1Style}>
         Aman Bookstore
-    </h1>
+      </h1>
       <ul style={ulStyle}>
         {links.map((link) => (
-          <li 
-          key={link.name}
-          style={liStyle}
+          <li
+            key={link.name}
+            style={liStyle}
           >
-            <NavLink to={link.path} style={navLinkStyle}>{link.name}
-            
+            <NavLink to={link.path} style={navLinkStyle}>
+              {link.name}
+
             </NavLink>
           </li>
         ))}

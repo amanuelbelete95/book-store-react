@@ -127,8 +127,8 @@ function BookList() {
           </div>
           <div className="progress">
             <div style={div1Style}>
-              <div className="progress-bar">
-                <div className="progresss" />
+              <div className="rotate">
+                <span className="circle"> </span>
               </div>
               <p style={div1pStyle}>
                 <span style={div1spanStyle}>
