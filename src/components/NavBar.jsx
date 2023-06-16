@@ -39,7 +39,7 @@ function NavBar() {
   return (
     <nav style={navStyle}>
       <h1 style={h1Style}>
-        Aman Bookstore
+        Amanuel Bookstore
       </h1>
       <ul style={ulStyle}>
         {links.map((link) => (
