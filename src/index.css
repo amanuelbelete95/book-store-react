@@ -259,23 +259,23 @@ input:focus {
 .form {
   margin-top: 1em;
   padding: 0 5em;
+}
 
-  .form-line {
-    border: 1px solid #e9e8e8;
-  }
+.form-line {
+  border: 0.5px solid #dddada;
+}
 
-  .form-title {
-    color: gray;
-    font-size: 1.4em;
-    margin-bottom: 0.5em;
-    margin-top: 0.5em;
-  }
+.form-title {
+  color: gray;
+  font-size: 1.4em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
 
-  .form-body {
-    display: flex;
-    justify-content: space-between;
-    gap: 1em;
-  }
+.form-body {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
 }
 
 .error {
@@ -299,3 +299,7 @@ nav {
   height: 1.4em;
   border: none;
 }
+
+/* .form-line {
+  border: 1px solid #e9e8e8;
+} */
