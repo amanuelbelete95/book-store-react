@@ -54,7 +54,7 @@ function BookList() {
     display: 'flex',
     gap: '1em',
   };
-  const div1pStyle = { textAlign: 'center', color: 'gray' };
+  const div1pStyle = { textAlign: 'center', color: 'gray', marginRight: '5.2em' };
   const div1spanStyle = { fontSize: '2.2em', color: 'black' };
 
   const {

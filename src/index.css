@@ -50,6 +50,16 @@ button {
   background: none;
 }
 
+.add-button {
+  text-transform: uppercase;
+  background-color: #379cf6;
+  font-size: 0.8em;
+  color: #fff;
+  padding: 0.7em 2.2em;
+  margin-top: 0.7em;
+  border-radius: 0.4em;
+}
+
 .lds-roller {
   display: inline-block;
   position: relative;
@@ -270,4 +280,22 @@ input:focus {
 
 .error {
   margin-top: 50px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-image {
+  width: 1.4em;
+  height: 1.4em;
+  border: none;
 }

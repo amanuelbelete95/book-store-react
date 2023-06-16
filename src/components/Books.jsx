@@ -66,7 +66,7 @@ function Books() {
             }}
           >
             {postMsg && <div> POSTING BOOK</div>}
-            {!postMsg && <div>ADD BOOK</div>}
+            {!postMsg && <div className="add-button">ADD BOOK</div>}
           </button>
         </div>
       </form>

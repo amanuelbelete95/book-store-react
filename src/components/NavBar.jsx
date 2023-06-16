@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import profile from './Image/userimage.png';
 
 function NavBar() {
   const navStyle = {
@@ -38,22 +39,26 @@ function NavBar() {
   ];
   return (
     <nav style={navStyle}>
-      <h1 style={h1Style}>
-        Amanuel Bookstore
-      </h1>
-      <ul style={ulStyle}>
-        {links.map((link) => (
-          <li
-            key={link.name}
-            style={liStyle}
-          >
-            <NavLink to={link.path} style={navLinkStyle}>
-              {link.name}
+      <div className="nav-container">
+        <h1 style={h1Style}>
+          Amanuel Bookstore
+        </h1>
+        <ul style={ulStyle}>
+          {links.map((link) => (
+            <li
+              key={link.name}
+              style={liStyle}
+            >
+              <NavLink to={link.path} style={navLinkStyle}>
+                {link.name}
 
-            </NavLink>
-          </li>
-        ))}
-      </ul>
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <img src={profile} alt="profile" className="user-image" />
     </nav>
   );
 }
