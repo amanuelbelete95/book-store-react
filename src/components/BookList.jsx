@@ -32,6 +32,11 @@ function BookList() {
     marginTop: '.3em',
     color: '#121212',
   };
+
+  const listSeparator = {
+    marginTop: '1em',
+  };
+
   const editStyle = {
     marginRight: '.8em',
     paddingRight: '.8em',
@@ -101,7 +106,7 @@ function BookList() {
             <p style={authorStyle}>
               {bookItem.author}
             </p>
-            <div>
+            <div style={listSeparator}>
               <button
                 type="button"
                 style={editStyle}
