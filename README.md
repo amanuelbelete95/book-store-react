@@ -60,6 +60,8 @@
 
 <!-- LIVE DEMO -->
 
+[🚀 Live Demo](https://book-store-u691.onrender.com/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
